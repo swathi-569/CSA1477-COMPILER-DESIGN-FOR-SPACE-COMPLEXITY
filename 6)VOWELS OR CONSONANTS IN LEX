@@ -1,0 +1,13 @@
+%{
+#include<stdio.h>
+%}
+%%
+[a|e|i|o|u|A|E|I|O|U]+ {printf("\n%s is vowels",yytext);}
+.+ {printf("\n%s are not vowels",yytext);}
+%%
+
+int yywrap(){}
+int main()
+{
+while(yylex());
+}
